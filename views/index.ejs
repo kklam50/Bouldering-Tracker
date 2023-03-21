@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <%- include('./partials/header') %>
   </head>
   <body>
+    <%- include('./partials/navbar') %>
+    <!-- <nav className="nav">
+      <a href="/" className = "site-title">Bouldering Tracker</a>
+      <ul>
+          <li>
+              <a href="/history">History</a>
+          </li>
+      </ul>
+    </nav> -->
     <h1>Bouldering Info</h1>
     <div id="bouldering-info"></div>
     

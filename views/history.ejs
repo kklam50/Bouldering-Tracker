@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <%- include('./partials/header') %>
     </head>
 
     <body>
-        <h2>this is the history page</h2>
+        <%- include('./partials/navbar') %>
+        <h1>this is the history page</h1>
+
+        <% results.forEach(function (element) { 
+            %> <h3>Climb Difficulty: <%= element.climbDifficulty %></h3>
+            <p>Date: <%= element.climbDate %> </p>
+        <%
+        }) %>
     </body>
 </html>
