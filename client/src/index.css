@@ -37,6 +37,16 @@ code {
   padding: 0.1rem;
 }
 
+/* add ability to click on card */
+.card a::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
 .card-title {
   font-size: 2.5rem;
   color: white;

@@ -58,7 +58,7 @@ function ResponsiveAppBar() {
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: theme.palette.accent.contrastText, display: 'block' }}
-                  component={Link} to={"/" + page}
+                  component={Link} to={"/" + page.toLowerCase()}
                 >
                   {page}
                 </Button>
@@ -96,7 +96,7 @@ function ResponsiveAppBar() {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} component={Link} to={"/" + page}>
+                  <MenuItem key={page} component={Link} to={"/" + page.toLowerCase()}>
                       <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}

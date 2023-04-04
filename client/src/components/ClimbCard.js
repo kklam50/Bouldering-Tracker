@@ -39,6 +39,7 @@ const ClimbCard = ({id}) => {
                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </div>
+                <a href="history" className="card-link"></a>
             </div>
 
         </div>
