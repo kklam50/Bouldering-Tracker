@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Add from "./pages/Add";
 import History from "./pages/History";
 import Progress from "./pages/Progress";
+import Climb from "./pages/Climb";
 import theme from './Theme';
 import { ThemeProvider } from '@mui/material/styles';
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/add" element={<Add />} />
             <Route path="/history" element={<History />} />
             <Route path="/progress" element={<Progress />} />
+            <Route path="/climb/:id" element={<Climb />} />
           </Routes>
         </div>
       </ThemeProvider>

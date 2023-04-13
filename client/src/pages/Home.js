@@ -1,18 +1,33 @@
 import ClimbCard from "../components/ClimbCard";
+import React, { useState, useEffect } from 'react';
 
 export default function Home() {
-    // var test = Array(10).fill(<ClimbCard/>);
-    var test = [];
-    for (var i = 0; i < 10; i++) {
-        test.push(<ClimbCard id={i}/>);
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/history')
+        .then(response => response.json())
+        .then(json => setData(json))
+        .catch(error => console.error(error));
+    }, []);
+
+    if (data == null) {
+        return;
+    }
+
+    var climbCards = [];
+    for (var i = 0; i < data.length; i++) {
+        climbCards.push(<ClimbCard id={data[i].climbID} 
+                              difficulty={data[i].climbDifficulty}
+                              date={data[i].climbDate}
+                              description={data[i].climbDescription}/>)
     }
 
     return (
         <>
-            {/* <h1>Home</h1> */}
             <div className="card-row">
-
-                {test.map((card) => (
+                {/* {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : 'Loading...'} */}
+                {climbCards.map((card) => (
                     card
                 ))}
             </div>
