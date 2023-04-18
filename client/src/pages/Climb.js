@@ -25,12 +25,13 @@ export default function Climb() {
 
     return (
         <>
+            <h1 className="page-title">Climb</h1>
             <div>
-            <h1>ClimbID: {climbID}</h1>
-            <h2>Climb grade: {climbDifficulty}</h2>
-            <h3>Climb date: {climbDate}</h3>
-            <p>Climb Location: {climbLocation}</p>
-            <p>Climb description: {climbDescription}</p>
+                <h3>ClimbID: {climbID}</h3>
+                <h3>Climb Grade: {climbDifficulty}</h3>
+                <h3>Climb Date: {climbDate}</h3>
+                <p>Climb Location: {climbLocation}</p>
+                <p>Climb Description: {climbDescription}</p>
             </div>
         </>
     )

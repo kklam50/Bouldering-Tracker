@@ -24,32 +24,31 @@ app.post("/add", async function (req, res) {
     const climbInfo = req.body;
 
     console.log(climbInfo);
-    const query = "INSERT INTO climbs (climbDifficulty, climbDate, climbLocation, climbDescription)"
-        + "VALUES ("
-        + "\"" + climbInfo.climbDifficulty + "\", "
-        + "\"" + climbInfo.climbDate + "\", "
-        + "\"" + climbInfo.climbLocation + "\", "
-        + "\"" + climbInfo.climbDescription + "\""
-        + ")";
 
-    db.query(query);
+    // var climbDate = climbInfo.climbDate.substring(5, 7) + "/" + climbInfo.climbDate.substring(8, 10) + "/" + climbInfo.climbDate.substring(0, 4);
+
+    // const query = "INSERT INTO climbs (climbDifficulty, climbDate, climbLocation, climbDescription)"
+    //     + "VALUES ("
+    //     + "\"" + climbInfo.climbDifficulty + "\", "
+    //     + "\"" + climbDate + "\", "
+    //     + "\"" + climbInfo.climbLocation + "\", "
+    //     + "\"" + climbInfo.climbDescription + "\""
+    //     + ")";
+
+    // db.query(query);
     res.redirect("http://localhost:8080/");
-})
-
-// getting all climbs; probably for home page or something
-app.get("/history", async function (req, res) {
-    const results = await db.query("SELECT * FROM climbs");
-    res.json(results);
 })
 
 // probably getting highest v-grade or something idk
 app.get("/home", async function (req, res) {
-    
+    const results = await db.query("SELECT * FROM climbs ORDER BY climbDate DESC");
+    res.json(results);
 })
 
 // grabbing all info, doing data transformation for trends 
 app.get("/progress", async function (req, res) {
-    
+    const results = await db.query("SELECT * FROM climbs ORDER BY climbGrade DESC");
+    res.json(results);
 })
   
 app.listen(PORT, () => console.log(`Hello world app listening on port http://localhost:3000/ !`));

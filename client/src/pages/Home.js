@@ -5,7 +5,7 @@ export default function Home() {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/history')
+        fetch('http://localhost:3000/home')
         .then(response => response.json())
         .then(json => setData(json))
         .catch(error => console.error(error));
@@ -25,6 +25,7 @@ export default function Home() {
 
     return (
         <>
+            <h1 className="page-title">Home</h1>
             <div className="card-row">
                 {/* {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : 'Loading...'} */}
                 {climbCards.map((card) => (

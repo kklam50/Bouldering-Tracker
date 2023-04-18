@@ -3,7 +3,6 @@ import ResponsiveAppBar from './components/Navbar';
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import Add from "./pages/Add";
-import History from "./pages/History";
 import Progress from "./pages/Progress";
 import Climb from "./pages/Climb";
 import theme from './Theme';
@@ -18,7 +17,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/add" element={<Add />} />
-            <Route path="/history" element={<History />} />
             <Route path="/progress" element={<Progress />} />
             <Route path="/climb/:id" element={<Climb />} />
           </Routes>

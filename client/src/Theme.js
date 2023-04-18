@@ -5,7 +5,7 @@ const theme = createTheme({
         primary: {
           main: '#212121',
           dark: '#212121',
-          contrastText: '#FAFAFA',
+          contrastText: 'rgba(255, 255, 255, 0.822)',
         },
         secondary: {
           light: '#0066ff',
@@ -16,14 +16,19 @@ const theme = createTheme({
         // Then you will be able to use it like this: `<Button color="custom">`
         // (For TypeScript, you need to add module augmentation for the `custom` value)
         custom: {
-          light: '#ffa726',
-          main: '#f57c00',
+          light: '#32a852',
+          main: 'rgb(224, 224, 224)',
           dark: '#ef6c00',
         //   contrastText: 'rgba(0, 0, 0, 0.87)',
         },
         accent: {
             main: '#263238',
             contrastText: '#FDFCFC'
+        },
+        form: {
+          background: "#383838",
+          borderColor: "#4f4f4f",
+          text: "rgba(255, 255, 255, 0.822)"
         },
         // Used by `getContrastText()` to maximize the contrast between
         // the background and the text.
@@ -47,6 +52,24 @@ const theme = createTheme({
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
       ].join(','),
+    },
+    components: {
+      MuiInputBase: {
+        styleOverrides: {
+          root: {
+            backgroundColor: "#383838",
+            color: "rgba(255, 255, 255, 0.822)",
+            borderRadius: "0.5rem"
+          }
+        }
+      },
+      MuiList: {
+        styleOverrides: {
+          root: {
+            maxHeight: 200
+          }
+        }
+      }
     }
 });
 

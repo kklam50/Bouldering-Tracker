@@ -14,7 +14,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import {Link} from 'react-router-dom';
 import theme from '../Theme';
 
-const pages = ['History', 'Progress', 'Add'];
+const pages = ['Progress', 'Add'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
